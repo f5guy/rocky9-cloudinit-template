@@ -1,4 +1,4 @@
-# Creating Templates and Virtual Machines on Proxmox using Rocky Cloud Images
+## Creating Templates and Virtual Machines on Proxmox using Rocky Cloud Images
 
 ```bash
 sudo apt update && sudo apt install libguestfs-tools
