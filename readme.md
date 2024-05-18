@@ -27,9 +27,7 @@ virt-customize -a $IMAGE --run-command 'rpm --import https://www.elrepo.org/RPM-
 virt-customize -a $IMAGE --run-command 'dnf install https://www.elrepo.org/elrepo-release-9.el9.elrepo.noarch.rpm -y'
 virt-customize -a $IMAGE --run-command 'dnf --enablerepo=elrepo-kernel install kernel-lt -y'
 virt-customize -a $IMAGE --run-command 'dnf --enablerepo=elrepo-kernel install kernel-lt-modules-extra -y'
-virt-customize -a $IMAGE --run-command 'grub2-mkconfig -o /boot/grub2/grub.cfg'
-virt-customize -a $IMAGE --run-command 'grub2-set-default 0'
-virt-customize -a $IMAGE --run-command 'dnf remove $(dnf repoquery --installonly --latest-limit=-1 -q)'
+virt-customize -a $IMAGE --run-command 'grubby --set-default /boot/vmlinuz-6.1.91-1.el9.elrepo.x86_64'
 qm create $TID --memory $RAM --cores $CORES  --net0 virtio,bridge=$BRIDGE --scsihw virtio-scsi-pci
 qm importdisk $TID $IMAGE $STORAGE
 qm set $TID --ide0 media=cdrom,file=none
