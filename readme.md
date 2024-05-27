@@ -1,7 +1,7 @@
 ## Creating Templates and Virtual Machines on Proxmox using Rocky Cloud Images
 
 ```bash
-sudo apt update && sudo apt install libguestfs-tools
+apt install libguestfs-tools
 export IMAGES_PATH="/mnt/pve/nfs-data/images/"
 mkdir -p ${IMAGES_PATH}
 cd ${IMAGES_PATH}
