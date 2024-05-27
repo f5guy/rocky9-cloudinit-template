@@ -5,7 +5,7 @@ sudo apt update && sudo apt install libguestfs-tools
 export IMAGES_PATH="/mnt/pve/nfs-data/images/"
 mkdir -p ${IMAGES_PATH}
 cd ${IMAGES_PATH}
-wget https://dl.rockylinux.org/pub/rocky/9/images/x86_64/Rocky-9-GenericCloud-Base.latest.x86_64.qcow2
+wget https://dl.rockylinux.org/vault/rocky/9.3/images/x86_64/Rocky-9-GenericCloud-Base.latest.x86_64.qcow2
 IMAGE="Rocky-9-GenericCloud-Base.latest.x86_64.qcow2"
 TID=9999
 TNAME=rocky9-cloudinit-template
